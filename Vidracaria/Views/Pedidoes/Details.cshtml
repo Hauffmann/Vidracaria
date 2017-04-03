@@ -1,0 +1,106 @@
+﻿@model Vidracaria.Models.Pedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pedido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEntrega)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEntrega)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ePedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ePedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetalhePagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetalhePagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desconto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Acrescimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Acrescimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorDesconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorDesconto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorAcrescimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorAcrescimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anotacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anotacao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

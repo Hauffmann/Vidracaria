@@ -1,0 +1,282 @@
+﻿@model Vidracaria.Models.Pessoa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sobrenome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sobrenome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InscricaoEstadual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailOutro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailOutro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CelularOutro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CelularOutro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneRes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneRes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneCom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneCom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Site)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Site)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anotacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anotacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UltimoAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UltimoAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemPequena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemPequena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMedia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMedia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemGrande1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemGrande1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemGrande2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemGrande2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemGrande3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemGrande3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra5)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

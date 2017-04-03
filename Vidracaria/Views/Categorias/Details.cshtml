@@ -1,0 +1,106 @@
+﻿@model Vidracaria.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Desconto.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desconto.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estaAtivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estaAtivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemPequena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemPequena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemMedia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemMedia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemGrande)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagemGrande)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

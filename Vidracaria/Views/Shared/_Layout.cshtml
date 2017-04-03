@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/datatables")
+    @Scripts.Render("~/Content/kendo")
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("JHVidraçaria", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown">Orçamento <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Produtoes")">Criar</a></li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Listar</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated">Vitrine <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Produtoes")">Vidros</a></li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Molduras</a></li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Peças</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Aqui embaixo tem mais</li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Blabla</a></li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Blabla</a></li>
+                        </ul>
+                    </li>
+                    
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated">Cadastros <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Pessoas")">Clientes</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Funcionários</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Fornecedores</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Transportadoras</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Parceiros</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Lojas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated">Sobre <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Home")">JHVidraçaria</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Flora Box</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated">Admin <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Home")">Loja</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Vitrine</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Ajustar Preço</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Desconto/Acréscimo</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">All Controllers</li>
+                            <li><a href="@Url.Action("Index", "Admin")">Admin</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li><a href="@Url.Action("Index", "Orcamento")">Orcamento</a></li>
+                            <li><a href="@Url.Action("Index", "Descontoes")">Descontos</a></li>
+                            <li><a href="@Url.Action("Index", "Categorias")">Categorias</a></li>
+                            <li><a href="@Url.Action("Index", "Tipoes")">Tipos</a></li>
+                            <li><a href="@Url.Action("Index", "Produtoes")">Produtos</a></li>
+                            <li><a href="@Url.Action("Index", "PedidoDetalhes")">PedidoDetalhes</a></li>
+                            <li><a href="@Url.Action("Index", "Pedidoes")">Pedidos</a></li>
+                            <li><a href="@Url.Action("Index", "Pagamentoes")">Pagamentos</a></li>
+                            <li><a href="@Url.Action("Index", "FormaPagamentoes")">FormaPagamentos</a></li>
+                            <li><a href="@Url.Action("Index", "Pessoas")">Pessoas</a></li>
+                            <li><a href="@Url.Action("Index", "Enderecoes")">Enderecos</a></li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/kendo")
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <!--Menu-->
+    <script>
+    // very simple to use!
+    $(document).ready(function() {
+      $('.js-activated').dropdownHover().dropdown();
+    });
+    </script>
+        
+</body>
+</html>

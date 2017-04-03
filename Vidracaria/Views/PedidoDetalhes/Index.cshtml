@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Vidracaria.Models.PedidoDetalhes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pedido.DetalhePagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produto.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecoTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desconto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acrescimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorDesconto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorAcrescimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eModelado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anotacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extra1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extra2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extra3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pedido.DetalhePagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produto.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecoUnitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecoTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Medida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desconto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acrescimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorDesconto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorAcrescimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eModelado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anotacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extra1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extra2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extra3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

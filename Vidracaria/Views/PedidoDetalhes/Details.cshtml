@@ -1,0 +1,146 @@
+﻿@model Vidracaria.Models.PedidoDetalhes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PedidoDetalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pedido.DetalhePagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pedido.DetalhePagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecoTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Medida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desconto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Acrescimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Acrescimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorDesconto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorDesconto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorAcrescimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorAcrescimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eModelado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eModelado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anotacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anotacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
