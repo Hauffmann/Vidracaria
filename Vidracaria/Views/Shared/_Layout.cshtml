@@ -8,7 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/Content/datatables")
     @Scripts.Render("~/Content/kendo")
+    <link href="~/Content/kendo/2017.1.223/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/kendo/2017.1.223/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/kendo/2017.1.223/kendo.default.mobile.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/style.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/kendo")
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -107,12 +116,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/datatables")
-    @Scripts.Render("~/bundles/kendo")
     <script type="text/javascript" src="~/Scripts/app.js"></script>
     @RenderSection("scripts", required: false)
 

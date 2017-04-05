@@ -126,10 +126,17 @@ namespace Vidracaria.Controllers
 
         public JsonResult Pessoas()
         {
-            var query = db.Pessoas
-                .Select(p => new { p.Nome, p.Sobrenome, p.Empresa, p.Cpf, p.Cnpj, Valor = p.Pedidos.Select(a => a.ValorTotal) })
+            //var query = db.Pessoas
+            //    .Select(p => new { p.Nome, p.Sobrenome, p.Empresa, p.Cpf, p.Cnpj, p.Descricao, Valor = p.Pedidos.Select(a => a.ValorTotal) })
+            //    .Where(p => p.Descricao.Equals("Cliente") && p.Nome.Length > 0)
+            //    .ToList();
+            //return Json(query, JsonRequestBehavior.AllowGet);
+
+            var query2 = db.Pessoas
+                .Select(p => p)
+                .Where(p => p.Descricao.Equals("Cliente") && p.Nome.Length > 0)
                 .ToList();
-            return Json(query, JsonRequestBehavior.AllowGet);
+            return Json(query2, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -12,8 +12,7 @@ namespace Vidracaria
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "~/Scripts/angular.js",
-                        "~/Scripts/angular-route.min.js"));
+                        "~/Scripts/angular.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
@@ -22,7 +21,7 @@ namespace Vidracaria
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                        "~/Scripts/DataTables/jquery.dataTables.min.js",
+                        "~/Scripts/DataTables/jquery.dataTables.js",
                         "~/Scripts/DataTables/dataTables.bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/datatables").Include(
@@ -30,17 +29,12 @@ namespace Vidracaria
 
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
                         "~/Scripts/kendo/2017.1.223/kendo.all.min.js",
-                        "~/Scripts/kendo/2017.1.223/kendo.ui.core.min.js",
                         "~/Scripts/kendo/2017.1.223/kendo.angular.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
                       "~/Content/kendo/2017.1.223/kendo.common.min.css",
                       "~/Content/kendo/2017.1.223/kendo.default.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.mobile.all.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.silver.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.silver.mobile.min",
-                      "~/Content/kendo/2017.1.223/kendo.dataviz.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.dataviz.default.min.css"));
+                      "~/Content/kendo/2017.1.223/kendo.default.mobile.min.css"));
 
 
 

@@ -10,11 +10,13 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div ng-app="store">
                 <div ng-controller="PessoaController as p">
+
                     <table id="test" class="table table-striped table-hover table-sm table-responsive">
                         <thead>
                             <tr>
@@ -28,6 +30,7 @@
                                 </tr>
                             </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
@@ -185,9 +188,9 @@
 {
     <script type="text/javascript">
         $(document).ready(function () {
-
             $('#assets-data-table').DataTable();
             $('#test').DataTable();
         });
+
     </script>
 }

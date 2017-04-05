@@ -4,17 +4,82 @@
 (function () {
 
     var app = angular.module('store', [
-        // Angular Modules
-        'ngRoute', // Routing
-
-
         // Custom Modules
-
 
         // 3rd Party Modules
         'kendo.directives'
     ]);
 
+
+    
+    app.controller("MyCtrl", function ($scope) {
+        $scope.mainGridOptions = {
+            dataSource: {
+                type: "odata",
+                transport: {
+                    read: "//demos.telerik.com/kendo-ui/service/Northwind.svc/Employees"
+                }
+            },
+            columns: [{
+                field: "FirstName",
+                title: "First Name {{1+1}}",
+                headerAttributes: { "ng-non-bindable": true },
+                width: "180px"
+            }, {
+                    field: "LastName",
+                    title: "Last Name",
+                    width: "120px"
+                }, {
+                    field: "Country",
+                    width: "120px"
+                }, {
+                    field: "City",
+                    width: "120px"
+                }]
+        };
+    });
+
+
+    app.controller("MyCtrl2", function ($scope) {
+        $scope.mainGridOptions = {
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: "/Pessoas/Pessoas"
+                },
+                pageSize: 10
+
+            },
+            columns: [{
+                    field: "p.Nome",
+                    width: "120px"
+                }, {
+                    field: "p.Sobrenome",
+                    width: "120px"
+                }, {
+                    field: "p.Cpf",
+                    width: "120px"
+                }]
+        };
+
+        $scope.detailGridOptions = {
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: "/Pessoas/Pessoas"
+                },
+                pageSize: 10
+
+            },
+            columns: [{
+                    field: "p.Pedidos.DataEntrega",
+                    width: "120px"
+                }, {
+                    field: "p.Pedidos.Valor",
+                    width: "120px"
+                }]
+        };
+    });
 
 
     app.controller('PessoaController', function ($scope, $http) {
