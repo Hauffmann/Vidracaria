@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -137,6 +138,64 @@ namespace Vidracaria.Controllers
                 .Where(p => p.Descricao.Equals("Cliente") && p.Nome.Length > 0)
                 .ToList();
             return Json(query2, JsonRequestBehavior.AllowGet);
+        }
+
+
+        /*
+        public JsonResult Test([DataSourceRequest] DataSourceRequest request)
+        {
+            var data = DataSource;
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+        */
+
+
+        [HttpPost]
+        public ActionResult KendoCreate(Pessoa pessoa)
+        {   
+            if (pessoa != null)
+            {
+                db.Pessoas.Add(pessoa);
+                db.SaveChanges();
+                return Json(pessoa);
+            }
+            else
+            {
+                return Json("An Error Has Occurred");
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult KendoUpdate(Pessoa pessoa)
+        {
+            if (pessoa != null)
+            {
+                db.Entry(pessoa).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(pessoa);
+            }
+            else
+            {
+                return Json("An Error Has Occurred");
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult KendoDelete(Pessoa pessoa)
+        {
+            if (pessoa != null)
+            {
+                Pessoa p = db.Pessoas.Find(pessoa.Id);
+                db.Pessoas.Remove(p);
+                db.SaveChanges();
+                return Json(pessoa);
+            }
+            else
+            {
+                return Json("An Error Has Occurred");
+            }
         }
     }
 }

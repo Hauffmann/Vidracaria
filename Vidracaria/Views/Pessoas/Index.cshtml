@@ -4,6 +4,170 @@
     ViewBag.Title = "Index";
 }
 
+
+
+
+<!--TEST-->
+<div id="example" ng-app="KendoDemos2">
+    <div ng-controller="MyCtrl2">
+        <kendo-grid options="mainGridOptions">
+            <div k-detail-template>
+                <kendo-tabstrip>
+                    <ul>
+                    
+                        <li><label>Nome:</label> <input class="k-textbox" ng-model="dataItem.Nome" /></li>
+                        <li><label>Sobrenome:</label> <input class="k-textbox" ng-model="dataItem.SobreNome" /></li>
+                    </ul>
+                    
+                    
+                </kendo-tabstrip>
+            </div>
+        </kendo-grid>
+    </div>
+</div>
+<!--TEST-->
+
+
+
+
+
+
+<!--TEST
+<div id="example" ng-app="KendoDemos">
+    <div ng-controller="MyCtrl">
+        <kendo-grid options="mainGridOptions">
+            <div k-detail-template>
+                <kendo-tabstrip>
+                    <ul>
+                        <li class="k-state-active">Orders</li>
+                        <li>Contact information</li>
+                    </ul>
+                    <div>
+                        <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
+                    </div>
+                    <div>
+                        <ul class="contact-info-form">
+                            <li><label>Country:</label> <input class="k-textbox" ng-model="dataItem.Country" /></li>
+                            <li><label>City:</label> <input class="k-textbox" ng-model="dataItem.City" /></li>
+                            <li><label>Address:</label> {{dataItem.Address}}</li>
+                            <li><label>Home phone:</label> {{dataItem.HomePhone}}</li>
+                        </ul>
+                    </div>
+                </kendo-tabstrip>
+            </div>
+        </kendo-grid>
+
+
+    </div>
+</div>
+
+<style>
+    .contact-info-form {
+        list-style-type: none;
+        margin: 30px 0;
+        padding: 0;
+    }
+
+        .contact-info-form li {
+            margin: 10px 0;
+        }
+
+        .contact-info-form label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            font-weight: bold;
+        }
+</style>
+
+<!--TEST-->
+
+
+
+
+
+
+
+
+<!-- KENDO
+<div id="example2">
+    <div id="grid2"></div>
+    <script>
+        $(document).ready(function () {
+            dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    update: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    create: {
+                        url: "/Pessoas/Test",
+                        dataType: "json"
+                    },
+                    parameterMap: function (option, operation) {
+                        if (operation !== "read" && options.models) {
+                            return { models: kendo.stringfy(options.models) };
+                        }
+                    }
+
+                },
+                batch: true,
+                pageSize: 10,
+                schema: {
+                    model: {
+                        id: "Id",
+                        fields: {
+                            Nome: { editable: true, nullable: true },
+                            Sobrenome: { validation: { required: false } }
+                        }
+                    }
+                }
+
+            });
+
+
+            $("#grid2").kendoGrid({
+                dataSource: dataSource,
+                filterable: { mode: "row" },
+                groupable: true,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                height: 610,
+                toolbar: ["create"],
+                columns: [
+                    { field: "Nome", title: "Nome" },
+                    { field: "Sobrenome", title: "Sobrenome" },
+                    { field: "Cpf", title: "Cpf" },
+                    { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
+                editable: "popup"
+            });
+        });
+    </script>
+</div>
+
+
+
+<!-- KENDO -->
+
+
+
+
+
+
+
+<!--
 <h2>Index</h2>
 
 <p>
@@ -183,6 +347,8 @@
         </div>
     </div>
 </div>
+    -->
+
 
 @section Scripts
 {

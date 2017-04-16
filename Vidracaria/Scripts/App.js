@@ -2,9 +2,70 @@ var angular;
 (function () {
     var app = angular.module('store', [
         // Custom Modules
+        'brasil.filters',
         // 3rd Party Modules
         'kendo.directives'
     ]);
+    /*
+    app.controller("kendoPessoas", function ($scope) {
+        $scope.mainGridOptions = {
+            
+            dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    update: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    create: {
+                        url: "/Pessoas/Pessoas",
+                        dataType: "json"
+                    },
+                    parameterMap: function (option, operation) {
+                        if (operation !== "read" && options.models) {
+                            return { models: kendo.stringfy(options.models) };
+                        }
+                    }
+                },
+                batch: true,
+                pageSize: 10,
+                schema: {
+                    model: {
+                        id: "Id",
+                        fields: {
+                            Nome: { editable: true, nullable: true },
+                            Sobrenome: { validation: { required: false } }
+                        }
+                    }
+                }
+            }),
+            dataSource: dataSource,
+            filterable: { mode: "row" },
+            groupable: true,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+            height: 610,
+            toolbar: ["create"],
+            columns: [
+                { field: "Nome", title: "Nome" },
+                { field: "Sobrenome", title: "Sobrenome" },
+                { field: "Cpf", title: "Cpf" },
+                { command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }],
+            editable: "popup"
+        }
+    });
+    */
     app.controller("MyCtrl", function ($scope) {
         $scope.mainGridOptions = {
             dataSource: {

@@ -6,12 +6,11 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/Content/datatables")
     @Scripts.Render("~/Content/kendo")
-    <link href="~/Content/kendo/2017.1.223/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/kendo/2017.1.223/kendo.default.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/kendo/2017.1.223/kendo.default.mobile.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/kendo/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/kendo.office365.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/kendo.office365.mobile.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" />
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -20,104 +19,151 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("JHVidraçaria", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="wrapper">
+        <div id="header" class="navbar navbar-inverse navbar-static-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("JHvidraçaria", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right active">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated">Orçamento <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Novo")">Novo</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Orçamento")">Orçamento</a></li>
+                                <li><a href="@Url.Action("Index", "Pedido")">Pedido</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Todos")">Todos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated">Cadastro <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Novo")">Novo</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Cliente PF</a></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Cliente PJ</a></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Funcionário</a></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Fornecedor</a></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Loja</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated">Vitrine <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Material</li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Acrílico</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Alumínio</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Espelho</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Moldura</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Peça</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">PVC</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Vidro</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Produto</li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Box</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Janela</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Mesa</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Porta</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Sacada</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Todos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated">Sobre <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Home")">JHvidraçaria</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Flora Box</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Index", "Home")">Trabalhos</a></li>
+                            </ul>
+                        </li>
+
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated">Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Home")">Loja</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Vitrine</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Ajustar Preço</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Desconto/Acréscimo</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">All Controllers</li>
+                                <li><a href="@Url.Action("Index", "Admin")">Admin</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                <li><a href="@Url.Action("Index", "Orcamento")">Orcamento</a></li>
+                                <li><a href="@Url.Action("Index", "Descontoes")">Descontos</a></li>
+                                <li><a href="@Url.Action("Index", "Categorias")">Categorias</a></li>
+                                <li><a href="@Url.Action("Index", "Tipoes")">Tipos</a></li>
+                                <li><a href="@Url.Action("Index", "Produtoes")">Produtos</a></li>
+                                <li><a href="@Url.Action("Index", "PedidoDetalhes")">PedidoDetalhes</a></li>
+                                <li><a href="@Url.Action("Index", "Pedidoes")">Pedidos</a></li>
+                                <li><a href="@Url.Action("Index", "Pagamentoes")">Pagamentos</a></li>
+                                <li><a href="@Url.Action("Index", "FormaPagamentoes")">FormaPagamentos</a></li>
+                                <li><a href="@Url.Action("Index", "Pessoas")">Pessoas</a></li>
+                                <li><a href="@Url.Action("Index", "Enderecoes")">Enderecos</a></li>
+
+                            </ul>
+                        </li>
+                            -->
+
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+        </div>
 
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown">Orçamento <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Produtoes")">Criar</a></li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Listar</a></li>
-                        </ul>
-                    </li>
 
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated">Vitrine <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Produtoes")">Vidros</a></li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Molduras</a></li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Peças</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Aqui embaixo tem mais</li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Blabla</a></li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Blabla</a></li>
-                        </ul>
-                    </li>
-                    
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated">Cadastros <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Pessoas")">Clientes</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Funcionários</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Fornecedores</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Transportadoras</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Parceiros</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Lojas</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated">Sobre <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Home")">JHVidraçaria</a></li>
-                            <li><a href="@Url.Action("Index", "Home")">Flora Box</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle js-activated">Admin <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Home")">Loja</a></li>
-                            <li><a href="@Url.Action("Index", "Home")">Vitrine</a></li>
-                            <li><a href="@Url.Action("Index", "Home")">Ajustar Preço</a></li>
-                            <li><a href="@Url.Action("Index", "Home")">Desconto/Acréscimo</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">All Controllers</li>
-                            <li><a href="@Url.Action("Index", "Admin")">Admin</a></li>
-                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action("Index", "Orcamento")">Orcamento</a></li>
-                            <li><a href="@Url.Action("Index", "Descontoes")">Descontos</a></li>
-                            <li><a href="@Url.Action("Index", "Categorias")">Categorias</a></li>
-                            <li><a href="@Url.Action("Index", "Tipoes")">Tipos</a></li>
-                            <li><a href="@Url.Action("Index", "Produtoes")">Produtos</a></li>
-                            <li><a href="@Url.Action("Index", "PedidoDetalhes")">PedidoDetalhes</a></li>
-                            <li><a href="@Url.Action("Index", "Pedidoes")">Pedidos</a></li>
-                            <li><a href="@Url.Action("Index", "Pagamentoes")">Pagamentos</a></li>
-                            <li><a href="@Url.Action("Index", "FormaPagamentoes")">FormaPagamentos</a></li>
-                            <li><a href="@Url.Action("Index", "Pessoas")">Pessoas</a></li>
-                            <li><a href="@Url.Action("Index", "Enderecoes")">Enderecos</a></li>
-
-                        </ul>
-                    </li>
 
 
-                </ul>
+        <div id="content" class="container body-content">
+            @RenderBody()
+
+        </div>
+
+
+
+
+        <div id="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-3 col-xs-9">
+                        <h1>JHvidraçaria</h1>
+                    </div>
+                    <div class="col-footer col-md-6 col-xs-9">
+                        <h3>Contact Us</h3>
+                        <p class="contact-us-details">
+                            <b>Address:</b> 123 Downtown Avenue, Manhattan, New York, United States of America<br />
+                            <b>Phone:</b> +1 123 45678910<br />
+                            <b>Fax:</b> +1 123 45678910<br />
+                            <b>Email:</b> <a href="mailto:info@yourcompanydomain.com">info@yourcompanydomain.com</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    
+    
+    
+    
+    
     @Scripts.Render("~/bundles/datatables")
-    <script type="text/javascript" src="~/Scripts/app.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app.js")"></script>
     @RenderSection("scripts", required: false)
 
     <!--Menu-->

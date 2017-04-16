@@ -1,6 +1,14 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html {
+    height:100%;
+    position: relative;
+} 
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height:100%;
+    height:100%;
+    margin:0 0 100px
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,3 +24,45 @@ textarea {
     max-width: 280px;
 }
 
+
+
+
+/*  FOOTER  */
+.footer {
+  background: #222;
+  color: #A0A0A0;
+  padding: 0 20px 10px 20px;
+  border-top: 4px solid #aec62c;
+  margin-top: 40px;
+  margin-bottom:0px;
+  position:relative;
+  overflow: hidden;
+  bottom:0;
+  left:0px;
+  right:0px;
+  color: 0 -1px 12px rgba(0,0,0,0.4);
+}
+.footer h3 {
+  color: #E4E4E4;
+  font-size: 1.3em;
+  border-bottom: 1px dotted #7C7C7C;
+}
+.footer ul {
+  padding: 0;
+}
+
+/*  FOOTER  */
+
+
+
+
+/*  JUMBOTRON  */
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url('@Url.Content("~/Content/img/homeSlide.jpg")');
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+/*  JUMBOTRON*/

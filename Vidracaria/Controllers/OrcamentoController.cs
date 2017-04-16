@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Vidracaria.Models;
 
 namespace Vidracaria.Controllers
 {
     public class OrcamentoController : Controller
     {
+        private VidracariaContext db = new VidracariaContext();
+
         // GET: Orcamento
         public ActionResult Index()
         {
@@ -85,5 +88,14 @@ namespace Vidracaria.Controllers
                 return View();
             }
         }
+
+        public JsonResult Pedidos()
+        {
+            var query = db.Pedidos
+            .Select(p => new { p.DataPedido, p.DataEntrega, p.ValorTotal, Nome = p.Pessoas.Select(a => a.Nome), Sobrenome = p.Pessoas.Select(a => a.Sobrenome), Descricao = p.Pessoas.Select(a => a.Descricao), Quantidade = p.PedidosDetalhes.Select(b => b.Quantidade), PrecoTotal = p.PedidosDetalhes.Select(b => b.PrecoTotal)})
+            .ToList();
+            return Json(query, JsonRequestBehavior.AllowGet);
+        }
+        
     }
 }

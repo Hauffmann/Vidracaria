@@ -46,7 +46,7 @@ namespace Vidracaria.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Extra1,Extra2,Extra3")] FormaPagamento formaPagamento)
+        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Desconto,Acrescimo,Extra1,Extra2,Extra3")] FormaPagamento formaPagamento)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Vidracaria.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Descricao,Extra1,Extra2,Extra3")] FormaPagamento formaPagamento)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Descricao,Desconto,Acrescimo,Extra1,Extra2,Extra3")] FormaPagamento formaPagamento)
         {
             if (ModelState.IsValid)
             {

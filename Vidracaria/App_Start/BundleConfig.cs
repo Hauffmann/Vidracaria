@@ -12,7 +12,9 @@ namespace Vidracaria
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "~/Scripts/angular.js"));
+                        "~/Scripts/angular.js",
+                        "~/Scripts/ng-filters-br.js",
+                        "~/Scripts/ng-kendo-grid.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
@@ -28,13 +30,14 @@ namespace Vidracaria
                       "~/Content/DataTables/css/dataTables.bootstrap.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
-                        "~/Scripts/kendo/2017.1.223/kendo.all.min.js",
-                        "~/Scripts/kendo/2017.1.223/kendo.angular.min.js"));
+                        "~/Scripts/kendo/kendo.all.min.js",
+                        "~/Scripts/kendo/kendo.angular.min.js",
+                        "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                      "~/Content/kendo/2017.1.223/kendo.common.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.default.min.css",
-                      "~/Content/kendo/2017.1.223/kendo.default.mobile.min.css"));
+                      "~/Content/kendo/kendo.common.min.css",
+                      "~/Content/kendo/kendo.office365.min.css",
+                      "~/Content/kendo/kendo.office365.mobile.min.css"));
 
 
 
@@ -50,7 +53,8 @@ namespace Vidracaria
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/style.css"));
         }
     }
 }
