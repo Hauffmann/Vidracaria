@@ -14,12 +14,28 @@
             <div k-detail-template>
                 <kendo-tabstrip>
                     <ul>
-                    
-                        <li><label>Nome:</label> <input class="k-textbox" ng-model="dataItem.Nome" /></li>
-                        <li><label>Sobrenome:</label> <input class="k-textbox" ng-model="dataItem.SobreNome" /></li>
+                        <li class="k-state-active">Contact information</li>
+                        <li>Orders</li>
                     </ul>
-                    
-                    
+                    <div>
+                        <ul class="contact-info-form">
+
+                            <li><label>CPF:</label> <input class="k-textbox" ng-model="dataItem.Cpf" /></li>
+                            <li><label>Email:</label> <input class="k-textbox" ng-model="dataItem.Email" /></li>
+                            <li><label>Email 2:</label> <input class="k-textbox" ng-model="dataItem.EmailOutro"</li>
+                            <li><label>Celular:</label> <input class="k-textbox" ng-model="dataItem.Celular"</li>
+                            <li><label>Celular 2:</label> <input class="k-textbox" ng-model="dataItem.CelularOutro"</li>
+                            <li><label>Telefone Residencial:</label> <input class="k-textbox" ng-model="dataItem.TelefoneRes"</li>
+                            <li><label>Telefone Comercial:</label> <input class="k-textbox" ng-model="dataItem.TelefoneCom"</li>
+                            <li><label>Fax:</label> <input class="k-textbox" ng-model="dataItem.Fax"</li>
+                            <li><label>Site:</label> <input class="k-textbox" ng-model="dataItem.Site"</li>
+                            <li><label>Anotação:</label> <input class="k-textbox" ng-model="dataItem.Anotacao"</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
+                    </div>
                 </kendo-tabstrip>
             </div>
         </kendo-grid>

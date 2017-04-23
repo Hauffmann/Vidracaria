@@ -30,5 +30,13 @@ namespace Vidracaria.Models
 
         //Relationships
         public virtual ICollection<Pessoa> Pessoas { get; set; }
+
+        public string End
+        {
+            get
+            {
+                return string.Format("{0}, {1}", this.Logradouro, this.Numero);
+            }
+        }
     }
 }

@@ -41,10 +41,15 @@
                                 //Id: { type: "number", editable: false, nulllable: true },
                                 Nome: { type: "string", validation: { required: { message: "Campo nome é obrigatório" } } },
                                 Sobrenome: { type: "string" },
-                                Cpf: { type: "string" },
-                                Descricao: { type: "string" },
-                                Tipo: { type: "number" },
-                                NomeInteiro: { type: "string"}
+                                //Cpf: { type: "string" },
+                                //Descricao: { type: "string" },
+                                //Tipo: { type: "number" },
+                                //NomeInteiro: { type: "string" },
+                                //End: { type: "string" },
+                                Logradouro: { type: "string" },
+                                Numero: { type: "number" },
+                                Bairro: { type: "string" },
+                                Cidade: { type: "string" }
                             }
                         }
                     },
@@ -99,24 +104,35 @@
                         refresh: "Atualizar"
                     }
                 },
-                toolbar: [{ name: "create", text: 'Adicionar Novo' }],
+                //toolbar: [{ name: "create", text: 'Adicionar Novo' }],
+                toolbar: kendo.template('<a class="btn btn-default" href="Pessoas/Create"><i class="fa fa-pencil"></i>Adicionar</a>'),
                 columns: [
                     //{ field: "Id", title: "ID", width: "40px", filterable: false },
                     { field: "Nome", title: "Nome", template: "{{dataItem.Nome}}" },
                     { field: "Sobrenome", title: "Sobrenome" },
-                    { field: "Cpf", title: "Cpf", template: "{{ dataItem.Cpf | cpf }}" },
-                    { field: "Descricao", title: "Descrição" },
-                    { field: "Tipo", Title: "Tipo" },
-                    { field: "NomeInteiro", Title: "Nome Inteiro" },
+                    //{ title: "Cliente", template: "#= Nome + ' ' + Sobrenome #" },
+                    //{ field: "Cpf", title: "Cpf", template: "{{ dataItem.Cpf | cpf }}" },
+                    //{ field: "Descricao", title: "Descrição" },
+                    //{ field: "Tipo", Title: "Tipo" },
+                    //{ field: "NomeInteiro", Title: "Cliente" },
+                    //{ field: "End", title: "Endereço" },
+                    //{ title: "Endereço", template: "#= Logradouro + ', ' + Numero #" },
+                    { field: "Logradouro", title: "Logradouro" },
+                    { field: "Numero", title: "Nº", width: 50, filterable: false},
+                    { field: "Bairro", title: "Bairro" },
+                    { field: "Cidade", title: "Cidade" },
                     //{ field: "active", title: "Active", template: '<input type="checkbox" #= active ? "checked=checked" : ""#></input>' },
                     //template: "<input type='checkbox' disabled='disabled' #= active ? 'checked=\"checked\"' : '' # />"
-                    {
-                        command: [
-                            { name: "edit", text: {edit: "Editar", update: "Atualizar", cancel: "Cancelar" } },
-                            { name: "destroy", text: "Deletar" }
-                        ],
-                        title: "&nbsp;"
-                    }
+                    //{
+                    //    command: [
+                    //        { name: "edit", text: { edit: "Editar", update: "Atualizar", cancel: "Cancelar" } },
+                    //        { name: "destroy", text: "Deletar" }
+                    //    ],
+                    //    title: "&nbsp;"
+                    //}
+                    //{ Field: "Id", width: 90, template: '<a class="btn btn-default" href="Pessoas/Edit/#=Id#"><i class="fa fa-pencil"></i>Editar</a><br/><a class="btn btn-default" href="Pessoas/Delete/#=Id#"><i class="fa fa-pencil"></i>Deletar</a>' }
+                    { Field: "Id", Title: "Editar", width:90, template: '<a class="btn btn-default" href="Edit/#=Id#"><i class="fa fa-pencil"></i>Editar</a>' },
+                    { Field: "Id", Title: "Deletar", width: 90, template: '<a class="btn btn-default" href="Delete/#=Id#"><i class="fa fa-pencil"></i>Deletar</a>' }
                 ],
                 editable: {
                     mode: "popup"
